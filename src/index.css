@@ -1,0 +1,81 @@
+:root {
+  --text: #5d6474;
+  --text-h: #0b1020;
+  --bg: #f4f7fb;
+  --border: #d8e0ee;
+  --accent: #ff6b35;
+  --shadow: rgba(15, 23, 42, 0.16) 0 18px 45px -20px;
+  --home-hero-text: #f8fbff;
+  --home-hero-kicker: rgba(255, 255, 255, 0.82);
+  --home-hero-copy: rgba(255, 255, 255, 0.92);
+  --home-hero-highlight: rgba(255, 255, 255, 0.18);
+  --home-hero-start: #0b1020;
+  --home-hero-mid: #17325f;
+  --home-hero-end: #2f6fb6;
+  --sans: Inter, "Segoe UI", Roboto, system-ui, sans-serif;
+
+  font: 18px/1.5 var(--sans);
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255, 107, 53, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.16), transparent 25%),
+    var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-bs-theme="dark"] {
+  --bg: #0b1220;
+  --text: #c3cad8;
+  --text-h: #f1f5f9;
+  --border: #263043;
+  --shadow: rgba(0, 0, 0, 0.4) 0 18px 45px -20px;
+  --home-hero-text: #f8fbff;
+  --home-hero-kicker: rgba(255, 255, 255, 0.82);
+  --home-hero-copy: rgba(255, 255, 255, 0.92);
+  --home-hero-highlight: rgba(255, 255, 255, 0.14);
+  --home-hero-start: #070b14;
+  --home-hero-mid: #111f3d;
+  --home-hero-end: #1e4d84;
+}
+
+html,
+body {
+  background: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1 {
+  margin: 0;
+  color: var(--text-h);
+  line-height: 1.05;
+  font-size: clamp(2rem, 4vw, 3.75rem);
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}

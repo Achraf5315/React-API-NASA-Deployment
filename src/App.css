@@ -1,0 +1,66 @@
+.app-shell {
+  min-height: 100svh;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: auto;
+}
+
+.card-text {
+  line-height: 1.7;
+}
+
+.home-hero {
+  color: var(--home-hero-text);
+  background:
+    radial-gradient(circle at top left, var(--home-hero-highlight), transparent 28%),
+    linear-gradient(135deg, var(--home-hero-start) 0%, var(--home-hero-mid) 45%, var(--home-hero-end) 100%);
+  box-shadow: var(--shadow);
+}
+
+.home-hero-kicker {
+  letter-spacing: 0.2em;
+  color: var(--home-hero-kicker);
+}
+
+.home-hero-copy {
+  max-width: 58rem;
+  color: var(--home-hero-copy);
+}
+
+.feature-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.feature-card-image {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.home-stat-pill {
+  display: inline-flex;
+  width: fit-content;
+  background: var(--bs-secondary-bg);
+  color: var(--bs-body-color);
+  border: 1px solid var(--bs-border-color);
+}
+
+.status-card--error {
+  border-color: rgba(220, 53, 69, 0.2);
+}
+
+@media (max-width: 720px) {
+  .home-hero {
+    border-radius: 1rem;
+  }
+}
