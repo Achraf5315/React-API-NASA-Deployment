@@ -1,8 +1,18 @@
+import { Link } from "react-router-dom";
 import LoadingState from "../components/LoadingState";
 import ErrorState from "../components/ErrorState";
 import { useHomeData } from "../hooks/useHomeData";
 
-function HomeCard({ title, text, badge, image, alt, statLines }) {
+function HomeCard({
+  title,
+  text,
+  badge,
+  image,
+  alt,
+  statLines,
+  detailLink,
+  detailLabel,
+}) {
   return (
     <div className="card shadow-sm feature-card h-100">
       {image ? (
@@ -23,6 +33,11 @@ function HomeCard({ title, text, badge, image, alt, statLines }) {
             </span>
           ))}
         </div>
+        {detailLink ? (
+          <Link to={detailLink} className="btn btn-primary mt-2">
+            {detailLabel ?? "Bekijk details"}
+          </Link>
+        ) : null}
       </div>
     </div>
   );
@@ -72,6 +87,8 @@ function Home() {
                 ? apod.copyright
                 : "NASA Astronomy Picture of the Day",
             ]}
+            detailLink="/apod"
+            detailLabel="Open APOD detailspagina"
           />
         </div>
         <div className="col-lg-5">
