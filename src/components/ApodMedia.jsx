@@ -23,7 +23,7 @@ function ApodMedia({ data }) {
       srcSet={srcSet}
       sizes="(max-width: 768px) 100vw, 50vw"
       alt={data.title}
-      className="card-img-top img-fluid w-50 align-self-center"
+      className="apod-media"
       loading="lazy"
       decoding="async"
       onLoad={() => setLoaded(true)}

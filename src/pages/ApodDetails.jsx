@@ -3,22 +3,40 @@ import ApodContent from "../components/ApodContent";
 import LoadingState from "../components/LoadingState";
 import ErrorState from "../components/ErrorState";
 import { useApod } from "../hooks/useApod";
+import { useSearchParams } from "react-router-dom";
 
 function ApodDetails() {
-  const { data, loading, error } = useApod();
+  const [searchParams] = useSearchParams();
+  const selectedDate = searchParams.get("date");
+  const { data, loading, error } = useApod(selectedDate);
 
-  if (loading) return <LoadingState />;
+  if (loading) return <LoadingState variant="apod" />;
   if (error) return <ErrorState message={error.message} />;
 
   return (
-    <section className="container py-4 py-lg-5">
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <h1 className="h3 mb-0">APOD details</h1>
-        <Link to="/" className="btn btn-outline-secondary btn-lg">
-          Terug naar home
-        </Link>
+    <section className="page-section page-section--stacked">
+      <div className="page-intro page-intro--dark">
+        <p className="eyebrow">MISSIE / APOD</p>
+        <div className="page-intro__row">
+          <h1 className="section-title">Astronomische foto van de dag</h1>
+          <Link to="/" className="page-back-link">
+            Terug naar home
+          </Link>
+        </div>
+        <p className="page-lead">
+          Een live venster op het dagelijkse NASA-archief, gepresenteerd als een
+          redactionele missierapportage.
+        </p>
+        {selectedDate ? (
+          <p className="page-lead page-lead--accent">
+            Geselecteerde datum: {selectedDate}
+          </p>
+        ) : null}
       </div>
-      <ApodContent data={data} />
+
+      <div className="page-panel">
+        <ApodContent data={data} />
+      </div>
     </section>
   );
 }

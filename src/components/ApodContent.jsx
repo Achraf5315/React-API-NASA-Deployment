@@ -2,13 +2,13 @@ import ApodMedia from "./ApodMedia";
 
 function ApodContent({ data }) {
   return (
-    <div className="card shadow-sm h-100">
-      <div className="card-body">
-        <p className="text-uppercase text-primary small mb-2">
-          NASA Astronomy Picture of the Day
+    <article className="apod-feature-card">
+      <div className="apod-feature-card__header">
+        <p className="eyebrow eyebrow--dark">
+          NASA ASTRONOMISCHE FOTO VAN DE DAG
         </p>
-        <h1 className="card-title">{data.title}</h1>
-        <p className="text-muted mb-0">
+        <h1>{data.title}</h1>
+        <p className="apod-feature-card__meta">
           {data.date}
           {data.copyright ? ` • ${data.copyright}` : ""}
         </p>
@@ -16,10 +16,10 @@ function ApodContent({ data }) {
 
       <ApodMedia data={data} />
 
-      <div className="card-body">
-        <p className="card-text">{data.explanation}</p>
+      <div className="apod-feature-card__body">
+        <p>{data.explanation}</p>
       </div>
-    </div>
+    </article>
   );
 }
 

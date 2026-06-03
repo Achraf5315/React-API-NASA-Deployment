@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getApod } from "../../services/NASA-API.js";
 
-export function useApod() {
+export function useApod(date = null) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ export function useApod() {
 
         async function loadApod() {
             try {
-                const result = await getApod();
+                const result = await getApod(date);
 
                 if (isActive) {
                     setData(result);
@@ -32,7 +32,7 @@ export function useApod() {
         return () => {
             isActive = false;
         };
-    }, []);
+    }, [date]);
 
     return { data, loading, error };
 }
