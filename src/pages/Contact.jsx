@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import PageIntro from "../components/PageIntro";
 
 const initialForm = {
   name: "",
@@ -94,21 +94,11 @@ function Contact() {
 
   return (
     <section className="page-section page-section--stacked">
-      <div className="page-intro page-intro--dark">
-        <p className="eyebrow">CONTACT / MISSIES</p>
-        <div className="page-intro__row">
-          <h1 className="section-title">
-            Stuur een bericht naar missiebesturing
-          </h1>
-          <Link to="/" className="page-back-link">
-            Terug naar home
-          </Link>
-        </div>
-        <p className="page-lead">
-          Gebruik dit formulier voor samenwerkingen, persvragen of vragen over
-          het archief. Het formulier controleert je invoer vóór verzending.
-        </p>
-      </div>
+      <PageIntro
+        eyebrow="CONTACT / MISSIES"
+        title="Stuur een bericht naar missiebesturing"
+        lead="Gebruik dit formulier voor samenwerkingen, persvragen of vragen over het archief. Het formulier controleert je invoer vóór verzending."
+      />
 
       <div className="page-panel contact-layout">
         <div className="contact-copy">
@@ -218,7 +208,7 @@ function Contact() {
 
           {response ? (
             <div className="mock-response field--full">
-              <p className="eyebrow eyebrow--dark">MOCK API-ANTWOORD</p>
+              <p className="eyebrow eyebrow--dark text-white">MOCK API-ANTWOORD</p>
               <pre>{JSON.stringify(response, null, 2)}</pre>
             </div>
           ) : null}

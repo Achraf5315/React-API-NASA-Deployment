@@ -1,8 +1,4 @@
-function formatNumber(value) {
-  return new Intl.NumberFormat("nl-NL", {
-    maximumFractionDigits: 2,
-  }).format(value);
-}
+import { formatNumber } from "../utils/formatNumber";
 
 function NeoContent({ data }) {
   const approach = data.close_approach_data?.[0];

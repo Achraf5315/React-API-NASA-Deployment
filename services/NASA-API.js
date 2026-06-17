@@ -8,6 +8,7 @@ function getApodCacheKey(date) {
 }
 
 async function fetchJson(url) {
+    console.log(`Fetching JSON from ${url}`);
     const response = await fetch(url);
 
     if (!response.ok) {

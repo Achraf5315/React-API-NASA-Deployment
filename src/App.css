@@ -370,7 +370,7 @@
 
 .philosophy-section {
   margin-top: 1.25rem;
-  padding: 5.5rem 0;
+  padding: 50px;
   background: linear-gradient(180deg, #f7f3eb, #f1ebdf);
   color: var(--ink-dark);
   border-radius: 2rem;

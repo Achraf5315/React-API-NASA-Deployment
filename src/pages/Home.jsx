@@ -207,7 +207,7 @@ function Home() {
 
       <section
         id="philosophy"
-        className="philosophy-section section-block section-block--light"
+        className="philosophy-section section-block section-block--light mx-auto"
       >
         <div className="philosophy-grid">
           <div className="philosophy-heading">

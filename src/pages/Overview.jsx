@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import LoadingState from "../components/LoadingState.jsx";
 import ErrorState from "../components/ErrorState.jsx";
 import { getApodRange, getNeoObject } from "../../services/NASA-API.js";
+import PageIntro from "../components/PageIntro.jsx";
 
 function NeoCard({ neo }) {
   if (!neo) return null;
@@ -137,21 +138,11 @@ function Overview() {
 
   return (
     <section className="page-section page-section--stacked">
-      <div className="page-intro page-intro--dark">
-        <p className="eyebrow">WETENSCHAP / OVERZICHT</p>
-        <div className="page-intro__row">
-          <h1 className="section-title">
-            Recente APOD en een near-Earth object
-          </h1>
-          <Link to="/" className="page-back-link">
-            Terug naar home
-          </Link>
-        </div>
-        <p className="page-lead">
-          Een donker dataruim voor het recente archief en baantracking, in
-          dezelfde redactionele stijl als de homepage.
-        </p>
-      </div>
+      <PageIntro
+        eyebrow="WETENSCHAP / OVERZICHT"
+        title="Recente APOD en een near-Earth object"
+        lead="Een donker dataruim voor het recente archief en baantracking, in dezelfde redactionele stijl als de homepage."
+      />
 
       <div className="page-grid">
         <NeoCard neo={neo} />
