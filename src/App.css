@@ -384,13 +384,65 @@
   align-items: start;
 }
 
+/* De container die alle kaartjes vasthoudt */
+.science-gallery {
+  display: grid;
+  /* Pas dit aan naar jouw gewenste aantal kolommen, bijvoorbeeld 1, 2 of 3 */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+  
+  /* VERGROOT DE RUIMTE TUSSEN DE KAARTEN */
+  gap: 2.5rem; /* Was waarschijnlijk kleiner, 2.5rem (40px) geeft veel ademruimte */
+  margin-top: 2rem;
+}
+
+/* De individuele kaart */
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #0b0d17; /* Jouw donkere achtergrondkleur */
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* VERGROOT DE BINNENRUIMTE (PADDING) VAN HET TEKSTBLOK */
+.gallery-card__body {
+  padding: 2rem; /* Verhoogd van bijvoorbeeld 1rem naar 2rem voor meer witruimte */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Zorgt voor een fijne afstand tussen titel, datum en tekst */
+}
+
+/* Optioneel: Marges tussen de tekstelementen zelf finetunen */
+.gallery-card__body h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.gallery-card__meta {
+  font-size: 0.875rem;
+  color: #a1a1aa;
+}
+
+.gallery-card__body p {
+  margin: 0;
+  line-height: 1.6; /* Verhoogt de regelafstand voor betere leesbaarheid */
+  color: #e4e4e7;
+}
+
+.gallery-card__cta {
+  margin-top: auto; /* Duwt de 'Bekijk detail' knop netjes naar de bodem */
+  padding-top: 1rem;
+}
+
 .philosophy-heading h2,
 .section-title,
 .transition-title,
 .apod-feature-card__header h1,
 .science-card h2,
 .page-intro h1,
-.gallery-card h3,
 .section-heading-inline h2 {
   margin: 0;
   font-family: var(--serif);
@@ -580,13 +632,12 @@
 }
 
 .page-section {
-  width: min(1400px, calc(100% - 2rem));
+  width: 100%;
   margin: 0 auto;
   padding: 3rem 0 4rem;
 }
 
 .page-section--stacked {
-  display: grid;
   gap: 1.25rem;
 }
 
@@ -599,7 +650,6 @@
 .page-panel,
 .science-card,
 .apod-feature-card,
-.gallery-card,
 .loading-shell,
 .error-shell {
   background: linear-gradient(180deg, rgba(18, 20, 29, 0.88), rgba(8, 10, 15, 0.9));
@@ -880,8 +930,7 @@ button:disabled {
 
 .apod-feature-card__header,
 .apod-feature-card__body,
-.science-card,
-.gallery-card__body {
+.science-card {
   padding: 1.5rem;
 }
 
@@ -892,8 +941,7 @@ button:disabled {
 }
 
 .apod-feature-card__meta,
-.science-card__meta,
-.gallery-card__meta {
+.science-card__meta {
   color: rgba(239, 237, 230, 0.66);
   font-family: var(--mono);
   font-size: 0.76rem;
@@ -922,8 +970,7 @@ button:disabled {
   gap: 1.25rem;
 }
 
-.science-card,
-.gallery-card {
+.science-card {
   border-radius: 1.5rem;
 }
 
@@ -961,57 +1008,6 @@ button:disabled {
 
 .section-heading-inline h2 {
   font-size: clamp(2rem, 3vw, 3.6rem);
-}
-
-.science-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.gallery-card {
-  overflow: hidden;
-}
-
-.gallery-card--link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-
-.gallery-card--link:hover,
-.gallery-card--link:focus-visible {
-  transform: translateY(-3px);
-}
-
-.gallery-card__media {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-  background: #06070d;
-}
-
-.gallery-card__body h3 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 1.8rem;
-  line-height: 1;
-}
-
-.gallery-card__body p {
-  margin: 0.9rem 0 0;
-  color: rgba(239, 237, 230, 0.82);
-  line-height: 1.7;
-}
-
-.gallery-card__cta {
-  display: inline-flex;
-  margin-top: 1rem;
-  color: var(--gold);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
 }
 
 .page-lead--accent {
