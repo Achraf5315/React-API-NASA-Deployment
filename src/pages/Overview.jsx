@@ -114,7 +114,7 @@ function Overview() {
         lead="Een donker dataruim voor het recente archief en baantracking, in dezelfde redactionele stijl als de homepage."
       />
 
-      <div className="page-grid">
+      <div className="">
         <div className="page-panel page-panel--wide">
           <div className="overview-toolbar">
             <div className="section-heading-inline">
